@@ -1,0 +1,45 @@
+{
+  "name": "Boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate, inspired from Ariya's From Zero to Hero Example",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "github.com/uselessworkz/boilerplate"
+  },
+  "author": "Useless Workz",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.1.5",
+    "director": "^1.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "codecov": "^1.0.1",
+    "complexity-report": "^1.4.1",
+    "http-server": "^0.9.0",
+    "jscs": "^2.10.1",
+    "karma": "^0.13.21",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.4",
+    "karma-detect-browsers": "^2.0.2",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-ie-launcher": "^0.2.0",
+    "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-safari-launcher": "^0.1.1",
+    "karma-sauce-launcher": "^0.3.1",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.4"
+  },
+  "scripts": {
+    "start": "http-server -p 9000",
+    "jscs": "jscs -p idiomatic js/*.js",
+    "test": "cd test && karma start",
+    "coverage": "cd test && karma start coverage.conf",
+    "complexity": "node node_modules/complexity-report/src/index.js -f plain js/*.js",
+    "codecov": "istanbul report cobertura && codecov < ./coverage/cobertura-coverage.xml",
+    "travis": "npm run coverage && npm run codecov && npm run complexity"
+  }
+}
